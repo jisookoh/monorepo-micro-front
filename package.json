@@ -1,0 +1,15 @@
+{
+  "name": "your-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:main": "pnpm --filter main dev",
+    "dev:todo": "pnpm --filter todo dev"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
