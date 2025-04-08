@@ -22,11 +22,21 @@ export default defineConfig({
     },
   },
   build: {
+    lib: {
+      entry: path.resolve(__dirname, "src/App.tsx"),
+      formats: ["es"],
+      fileName: "todo-app",
+    },
+    outDir: "dist",
+    emptyOutDir: true,
     target: "esnext",
     minify: false,
     cssCodeSplit: false,
   },
   server: {
+    port: 3001,
+  },
+  preview: {
     port: 3001,
   },
 });
