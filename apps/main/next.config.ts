@@ -11,12 +11,22 @@ const nextConfig: NextConfig = {
     config.plugins.push(
       new NextFederationPlugin({
         name: "main",
+        filename: "remoteEntry.js",
         remotes: {
-          todo: "todo@http://localhost:3001/assets/remoteEntry.js",
+          todo: `promise new Promise(resolve => {
+            const remoteUrl = "http://localhost:3001/assets/remoteEntry.js";
+            const script = document.createElement("script");
+            script.src = remoteUrl;
+            script.type = "module";
+            script.onload = () => {
+              resolve(window.todo);
+            };
+            document.head.appendChild(script);
+          })`,
         },
         shared: {
-          react: { singleton: true },
-          "react-dom": { singleton: true },
+          react: { singleton: true, eager: true, requiredVersion: false },
+          "react-dom": { singleton: true, eager: true, requiredVersion: false },
         },
         extraOptions: {
           exposePages: false,
