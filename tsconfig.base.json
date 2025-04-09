@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["packages/components/src/*"],
-      "@common/*": ["packages/common/src/*"]
+      "@ui/*": ["packages/ui/src/*"],
+      "@lib/*": ["packages/lib/src/*"]
     },
     "moduleResolution": "node",
     "target": "ES2020",
