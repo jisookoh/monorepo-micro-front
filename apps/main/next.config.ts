@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 import { NextFederationPlugin } from "@module-federation/nextjs-mf";
 import type { Configuration } from "webpack";
+import withTM from "next-transpile-modules";
+
+const withTranspile = withTM(["@ui"]);
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -38,4 +41,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withTranspile(nextConfig);

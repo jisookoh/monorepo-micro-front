@@ -2,6 +2,13 @@
   "name": "@ui",
   "private": true,
   "version": "0.0.0",
+  "main": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
+    }
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
