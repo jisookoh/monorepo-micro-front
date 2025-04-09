@@ -1,4 +1,4 @@
-declare module "todo/TodoApp" {
+declare module "todo/*" {
   const Component: React.ComponentType;
   export default Component;
 }

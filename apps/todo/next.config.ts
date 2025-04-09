@@ -12,13 +12,15 @@ const nextConfig: NextConfig = {
 
     config.plugins.push(
       new NextFederationPlugin({
-        name: "main",
+        name: "todo",
         filename: `static/${location}/remoteEntry.js`,
-        remotes: {
-          todo: `todo@http://localhost:3001/_next/static/${location}/remoteEntry.js`,
+        exposes: {
+          "./todoApp": "./pages/todo/index.tsx",
         },
         extraOptions: {
           exposePages: true,
+          enableImageLoaderFix: true,
+          enableUrlLoaderFix: true,
         },
       })
     );
