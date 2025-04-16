@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
         filename: `static/${location}/remoteEntry.js`,
         remotes: {
           todo: `todo@http://localhost:3001/_next/static/${location}/remoteEntry.js`,
+          remote: "remote@http://localhost:3001/remote.js",
         },
         extraOptions: {
           exposePages: true,
