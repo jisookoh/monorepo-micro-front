@@ -10,10 +10,12 @@
     "dev:todo": "pnpm --filter todo dev"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "@module-federation/vite": "^1.2.6",
+    "typescript": "^5.8.3",
+    "vite": "^6.2.0"
   },
   "dependencies": {
-    "webpack": "^5.99.3",
-    "webpack-cli": "^6.0.1"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
