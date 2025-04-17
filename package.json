@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:main": "pnpm --filter main dev",
+    "dev:main": "pnpm --filter shell dev",
     "dev:todo": "pnpm --filter todo dev"
   },
   "devDependencies": {

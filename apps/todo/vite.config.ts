@@ -9,17 +9,30 @@ export default defineConfig({
       name: "todo",
       filename: "remoteEntry.js",
       exposes: {
-        "./App": "./src/App.tsx",
+        "./Button": "./src/components/Button",
       },
-      shared: ["react", "react-dom"],
+      shared: {
+        react: {
+          singleton: true,
+        },
+        "react-dom": {
+          singleton: true,
+        },
+      },
     }),
   ],
   build: {
+    outDir: "dist",
+    emptyOutDir: true,
+    modulePreload: false,
     target: "esnext",
     minify: false,
     cssCodeSplit: false,
   },
   server: {
+    port: 3001,
+  },
+  preview: {
     port: 3001,
   },
 });
